@@ -1,13 +1,18 @@
 <html>
-<head>
+    <head>
 
-</head>
-<body>
-{% for persona in persona_list %}
-
-<h2> {{ persona.nombre }} <b> {{ persona.apellido }} </b>
-<p> {{ persona.club}} </p>
-
-{% edfor %}
-</body>
+    </head>
+    <body>
+    	{% for persona in persona_list %}
+    	    <h2> {{ persona.nombre }} <b>{{ persona.apellido }}</b> </h2>
+    	    <p> {{ persona.club }} </p>
+            <p> {{ persona.dni }} </p>
+            <div>
+                {% if persona.foto %}
+                
+                <img src="{{ persona.foto.url }}" alt="{{ persona.nombre }} {{persona.apellido}} {{persona.dni}} ">
+                {% endif %}
+            </div>
+        {% endfor %}
+    </body>
 </html>
